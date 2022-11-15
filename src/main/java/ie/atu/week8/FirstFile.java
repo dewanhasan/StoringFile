@@ -1,6 +1,7 @@
 package ie.atu.week8;
 
 import java.io.*;
+import java.nio.file.Path;
 
 public class FirstFile {
     public static void main(String[] args) {
@@ -9,8 +10,9 @@ public class FirstFile {
             System.out.println("My File is located at " + myFile.getAbsolutePath());
             String content = "Details to write";
             try{
-                FileWriter myWriter = new FileWriter(myFile, true);
-                myWriter.write(" Hello bbg");
+                PrintWriter myWriter = new PrintWriter(
+                        new FileWriter(myFile, true));
+                myWriter.println("Hello again");
                 myWriter.close();
             } catch (IOException f)
             {
